@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:background="#3a3a3a"
+                android:padding="4dp"
+                android:src="@drawable/logo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"/>
+
+            <Button
+                android:id="@+id/orderButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FINALIZAR PEDIDO"
+                android:textColor="#000"
+                android:backgroundTint="#FF9800"
+                android:layout_alignParentEnd="true"
+                android:onClick="evaluateExpressionEvent"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+        <!-- Menu de rolagem -->
+        <ScrollView
+            android:id="@+id/menuScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#f2f2f2"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Adicione os itens do menu dinamicamente aqui -->
+
+                <!-- Card 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="#3a3a3a"
+                    android:layout_marginBottom="20dp"
+                    android:padding="20dp">
+
+                    <!-- Adicione a imagem aqui -->
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/coquinha"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="Imagem do Produto"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Coquinha gelada 300ml"
+                            android:textSize="24sp"
+                            android:textColor="#fff"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="R$ 7,00"
+                            android:textSize="18sp"
+                            android:textColor="#fff"
+                            android:layout_marginTop="5dp"/>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Adicionar ao pedido"
+                            android:textColor="#fff"
+                            android:background="#000"
+                            android:layout_marginTop="10dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Adicione mais cards conforme necessário -->
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Menu de rolagem -->
+        <ScrollView
+            android:id="@+id/menuScrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#f2f2f2"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Adicione os itens do menu dinamicamente aqui -->
+
+                <!-- Card 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="#3a3a3a"
+                    android:layout_marginBottom="20dp"
+                    android:padding="20dp">
+
+                    <!-- Adicione a imagem aqui -->
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/coquinha"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="Imagem do Produto"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Coquinha gelada 300ml"
+                            android:textSize="24sp"
+                            android:textColor="#fff"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="R$ 7,00"
+                            android:textSize="18sp"
+                            android:textColor="#fff"
+                            android:layout_marginTop="5dp"/>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Adicionar ao pedido"
+                            android:textColor="#fff"
+                            android:background="#000"
+                            android:layout_marginTop="10dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Adicione mais cards conforme necessário -->
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</RelativeLayout>
