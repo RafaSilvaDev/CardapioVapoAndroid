@@ -151,9 +151,11 @@ public class FimPedidoActivity extends AppCompatActivity {
                         "Titular: " + editTextTitular.getText().toString() +
                         ", Valor total: R$" + textViewTotal.getText().toString() +
                         ", Tempo de preparo: " + textViewTempoPreparo.getText().toString() + "." +
-                        "   | Itens do pedido: ";
+                        "   | Itens do pedido:  ";
+                int counter = 1;
                 for (Bebida item : pedido) {
-                    data += "\n" + item.getName();
+                    data += counter + ". " + item.getName() + " ";
+                    counter++;
                 }
                 String url = "https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=" + data;
                 startActivity(new Intent(Intent.ACTION_VIEW,
