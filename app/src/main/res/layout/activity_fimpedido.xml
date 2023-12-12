@@ -1,163 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#f2f2f2"
-    android:padding="16dp">
+    tools:context=".MainActivity">
 
-    <!-- Heading com o logo e botão de novo pedido -->
     <RelativeLayout
-        android:id="@+id/headingLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#000"
-        android:padding="8dp">
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/logoImageView"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/logo"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true"/>
-
-        <Button
-            android:id="@+id/newOrderButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="8dp"
-            android:backgroundTint="#FF9800"
-            android:onClick="novoPedido"
-            android:text="REALIZAR NOVO PEDIDO"
-            android:textColor="#fff" />
     </RelativeLayout>
 
-    <!-- Quadrado contendo informações do pedido -->
     <RelativeLayout
         android:id="@+id/orderInfoLayout"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:layout_marginTop="16dp"
+        android:layout_below="@+id/header"
+        android:layout_marginTop="-1dp"
         android:background="#FFAE00"
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/orderNameTextView"
+            android:id="@+id/orderNameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Titular do Pedido: Nome do Cliente"
+            android:text="Titular do Pedido:"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/orderTotalLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/orderNameLabel"
+            android:layout_marginTop="8dp"
+            android:text="Total:"
             android:textColor="#000"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/orderTotalTextView"
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/orderNameLabel"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@+id/orderTotalLabel"
+            android:text="R$0.0"
+            android:textColor="#FFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/preparationTimeLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/orderNameTextView"
+            android:layout_below="@id/orderTotalLabel"
             android:layout_marginTop="8dp"
-            android:text="Total: R$ 0,00"
+            android:text="Tempo de Preparo:"
             android:textColor="#000"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/preparationTimeTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="88dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/orderTotalTextView"
+            android:layout_below="@id/orderTotalLabel"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
-            android:text="Tempo de Preparo: 10 minutos"
-            android:textColor="#000"
-            android:textSize="16sp" />
+            android:layout_toEndOf="@+id/preparationTimeLabel"
+            android:text="0 minutos"
+            android:textColor="#FFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/finalizarPedidoBtn"
             android:layout_width="349dp"
             android:layout_height="66dp"
-            android:layout_below="@+id/preparationTimeTextView"
+            android:layout_below="@+id/preparationTimeLabel"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="1dp"
             android:backgroundTint="#000"
+            android:onClick="finalizarPedido"
             android:text="FINALIZAR PEDIDO" />
+
+        <EditText
+            android:id="@+id/titularText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="-1dp"
+            android:layout_toEndOf="@+id/orderNameLabel"
+            android:ems="10"
+            android:hint="Insira seu nome"
+            android:inputType="text"
+            android:textColor="#FFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
-    <!-- Menu de rolagem -->
-
-    <!-- Cards no final da página -->
-    <!-- Menu de rolagem -->
     <ScrollView
         android:id="@+id/menuScrollView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderInfoLayout"
+        android:layout_marginTop="2dp"
         android:layout_weight="1"
-        android:background="#f2f2f2"
         android:padding="20dp">
 
         <LinearLayout
+            android:id="@+id/itemsListLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Adicione os itens do menu dinamicamente aqui -->
-
-            <!-- Card 1 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:background="#FF9800"
-                android:orientation="horizontal"
-                android:padding="20dp">
-
-                <!-- Adicione a imagem aqui -->
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:contentDescription="Imagem do Produto"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/coquinha" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingStart="16dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Coquinha gelada 300ml"
-                        android:textColor="#fff"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="R$ 7,00"
-                        android:textColor="#fff"
-                        android:textSize="18sp" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:backgroundTint="#000"
-                        android:text="Adicionar ao pedido"
-                        android:textColor="#fff" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- Adicione mais cards conforme necessário -->
-
-        </LinearLayout>
+            android:orientation="vertical" />
     </ScrollView>
 
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="#000"
+        android:padding="10dp">
 
-    <!-- Card 2, 3, 4, 5 - Similar to Card 1 -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#3a3a3a"
+            android:padding="4dp"
+            android:src="@drawable/logo" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/newOrderButton"
+            android:layout_width="163dp"
+            android:layout_height="69dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="57dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@+id/logo"
+            android:backgroundTint="#a10000"
+            android:onClick="novoPedido"
+            android:text="REALIZAR NOVO PEDIDO"
+            android:textColor="#fff" />
+    </RelativeLayout>
+
+</RelativeLayout>
